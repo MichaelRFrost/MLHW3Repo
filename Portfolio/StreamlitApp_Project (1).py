@@ -68,8 +68,8 @@ sm_session = sagemaker.Session(boto_session=session)
 
 MODEL_INFO = {
     "endpoint"  : aws_endpoint,
-    "explainer" : "explainer_fraud.shap",
-    "pipeline"  : "fine_tuned_pipeline.tar.gz",
+    "explainer" : "final_loan_default_shap_explainer.shap",
+    "pipeline"  : "final_loan_default_model_artifacts.tar.gz",
     "keys"      : ['cat__grade_A','num__term_num','num__int_rate_num'],
     "inputs"    : [{"name": k, "type": "number", "min": -1.0, "max": 1.0, "default": 0.0, "step": 0.01} for k in ['cat__grade_A','num__term_num','num__int_rate_num']]
 }
